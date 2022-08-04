@@ -5,16 +5,18 @@ namespace Friendly10s
         int tally = 0;
 
 
+
         public Form1()
         {
             InitializeComponent();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
 
             button1.Visible = false;
-            
+
         }
         private void button_genericClick(object sender, EventArgs e)
         {
@@ -35,5 +37,7 @@ namespace Friendly10s
         {
 
         }
+
+
     }
 }
