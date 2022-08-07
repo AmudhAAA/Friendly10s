@@ -4,10 +4,11 @@ namespace Friendly10s
     {
         int tally = 0;
         int count = 0;
-       
+        int errorcount = 0;
         
        
         
+             
 
 
         public Form1()
@@ -93,6 +94,7 @@ namespace Friendly10s
             timer1.Enabled = true;
             tally = 0;
             count = 0;
+            errorcount = errorcount + 1;
             colourReset();
         }
         public void success()
@@ -108,6 +110,12 @@ namespace Friendly10s
             button2.BackColor = Color.White;
             button3.BackColor = Color.White;
             button4.BackColor = Color.White;
+            button5.BackColor = Color.White;
+            button6.BackColor = Color.White;
+            button7.BackColor = Color.White;
+            button8.BackColor = Color.White;
+            button9.BackColor = Color.White;
+            button10.BackColor = Color.White;
 
         }
 
@@ -120,6 +128,7 @@ namespace Friendly10s
         private void timer1_Tick(object sender, EventArgs e)
         {
             pictureBox2.Visible = false;
+
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -129,17 +138,74 @@ namespace Friendly10s
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            tally = tally + 3;  
+            count = count + 1;
+            checker();
+            button5.BackColor = Color.LightYellow;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            tally = tally + 7;
+            count = count + 1;
+            checker();
+            button6.BackColor = Color.LightYellow;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            tally = tally + 4;
+            count = count + 1;
+            checker();
+            button7.BackColor = Color.LightYellow;
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            tally = tally + 5;
+            count = count + 1;
+            checker();
+            button9.BackColor = Color.LightYellow;
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            tally = tally + 5;
+            count = count + 1;
+            checker();
+            button10.BackColor = Color.LightYellow;
+
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            tally = tally + 6;
+            count = count + 1;
+            checker();
+            button8.BackColor = Color.LightYellow;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            //ignore
         }
     }
    
