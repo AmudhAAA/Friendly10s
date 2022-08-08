@@ -106,6 +106,7 @@ namespace Friendly10s
             count = 0;
             Globals.errorcount = Globals.errorcount + 1;
             colourReset();
+            btd.Clear();
         }
         public void success()
         {
