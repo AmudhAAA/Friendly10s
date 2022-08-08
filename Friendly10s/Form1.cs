@@ -23,12 +23,11 @@ namespace Friendly10s
 
             tally = tally + 1;
             count = count + 1;
+            btd.Add(button1);
             checker();
             button1.BackColor = Color.LightYellow;
 
-            Point p = button1.Location;
-            p.Y = p.Y - 10;
-            button1.Location = p;
+            
 
 
         }
@@ -41,8 +40,11 @@ namespace Friendly10s
         {
             tally = tally + 9;
             count = count + 1;
-            checker();
+            btd.Add(button2);
             button2.BackColor = Color.LightYellow;
+            checker();
+            
+            
         }
 
         public void Form1_Load(object sender, EventArgs e)
@@ -54,17 +56,20 @@ namespace Friendly10s
         {
             tally = tally + 2;
             count = count + 1;
-            checker();
             button3.BackColor = Color.LightYellow;
-            btd.add(button3);
+            btd.Add(button3);
+            checker();
+            
         }
 
         public void button4_Click(object sender, EventArgs e)
         {
             tally = tally + 8;
             count = count + 1;
-            checker();
             button1.BackColor = Color.LightYellow;
+            btd.Add(button4);
+            checker();
+            
 
         }
        public void checker()
@@ -108,6 +113,13 @@ namespace Friendly10s
             timer2.Enabled = true;
             tally = 0;
             count = 0;
+            foreach (Button x in btd)
+            {
+                x.Visible = false;
+                
+            }
+
+            btd.Clear();
         }
         public void colourReset()
         {
@@ -145,24 +157,30 @@ namespace Friendly10s
         {
             tally = tally + 3;  
             count = count + 1;
-            checker();
             button5.BackColor = Color.LightYellow;
+            btd.Add(button5);
+            checker();
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             tally = tally + 7;
             count = count + 1;
-            checker();
             button6.BackColor = Color.LightYellow;
+            btd.Add(button6);
+            checker();
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             tally = tally + 4;
             count = count + 1;
-            checker();
             button7.BackColor = Color.LightYellow;
+            btd.Add(button7);
+            checker();
+            
 
         }
 
@@ -170,8 +188,10 @@ namespace Friendly10s
         {
             tally = tally + 5;
             count = count + 1;
-            checker();
             button9.BackColor = Color.LightYellow;
+            btd.Add(button9);
+            checker();
+            
 
         }
 
@@ -179,8 +199,10 @@ namespace Friendly10s
         {
             tally = tally + 5;
             count = count + 1;
-            checker();
             button10.BackColor = Color.LightYellow;
+            btd.Add(button10);
+            checker();
+            
 
 
         }
@@ -189,8 +211,10 @@ namespace Friendly10s
         {
             tally = tally + 6;
             count = count + 1;
-            checker();
             button8.BackColor = Color.LightYellow;
+            btd.Add(button8);
+            checker();
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
