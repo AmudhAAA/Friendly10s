@@ -2,13 +2,13 @@ namespace Friendly10s
 {
     public partial class Form1 : Form
     {
-        int tally = 0;
-        int count = 0;
-        int errorcount = 0;
-        
-       
-        
-             
+
+        public static int tally = 0;
+        public static int count = 0;
+        //public static int errorcount = 0;
+        List<Button> btd = new List<Button>();
+
+
 
 
         public Form1()
@@ -25,7 +25,11 @@ namespace Friendly10s
             count = count + 1;
             checker();
             button1.BackColor = Color.LightYellow;
-            
+
+            Point p = button1.Location;
+            p.Y = p.Y - 10;
+            button1.Location = p;
+
 
         }
         public void button_genericClick(object sender, EventArgs e)
@@ -52,6 +56,7 @@ namespace Friendly10s
             count = count + 1;
             checker();
             button3.BackColor = Color.LightYellow;
+            btd.add(button3);
         }
 
         public void button4_Click(object sender, EventArgs e)
@@ -94,7 +99,7 @@ namespace Friendly10s
             timer1.Enabled = true;
             tally = 0;
             count = 0;
-            errorcount = errorcount + 1;
+            Globals.errorcount = Globals.errorcount + 1;
             colourReset();
         }
         public void success()
