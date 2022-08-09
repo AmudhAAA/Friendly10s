@@ -1,3 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Media;
+
 namespace Friendly10s
 {
     public partial class Form1 : Form
@@ -117,6 +128,8 @@ namespace Friendly10s
             timer2.Enabled = true;
             tally = 0;
             count = 0;
+            SoundPlayer mysound = new SoundPlayer(@"C:\Users\amudh\source\repos\Friendly10s1\Friendly10s\Resources\happy.wav");
+            mysound.Play();
             foreach (Button x in btd)
             {
                 x.Visible = false;
@@ -246,6 +259,7 @@ namespace Friendly10s
             f2.ShowDialog();
            
         }
+
     }
    
 
