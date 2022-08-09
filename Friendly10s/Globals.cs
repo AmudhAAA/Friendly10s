@@ -10,6 +10,8 @@ namespace Friendly10s
     {
         public static string name;
         public static string eyecolour;
-        public static int errorcount;
+        public static int errorcount = 0;
+
+
     }
 }

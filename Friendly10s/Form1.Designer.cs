@@ -46,6 +46,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -104,7 +106,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(347, 96);
+            this.pictureBox2.Location = new System.Drawing.Point(295, 67);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1165, 662);
             this.pictureBox2.TabIndex = 5;
@@ -115,7 +117,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-77, -10);
+            this.pictureBox3.Location = new System.Drawing.Point(-224, -8);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(2071, 1185);
             this.pictureBox3.TabIndex = 6;
@@ -201,19 +203,40 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(1551, 35);
+            this.textBox2.Location = new System.Drawing.Point(1466, 35);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(172, 39);
+            this.textBox2.Size = new System.Drawing.Size(257, 39);
             this.textBox2.TabIndex = 14;
             this.textBox2.Text = "Error Count";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1614, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 32);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "0";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(1507, 98);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(175, 214);
+            this.button11.TabIndex = 17;
+            this.button11.Text = "Account";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1752, 936);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -257,5 +280,7 @@
         private Button button9;
         private Button button10;
         private TextBox textBox2;
+        private Label label1;
+        private Button button11;
     }
 }

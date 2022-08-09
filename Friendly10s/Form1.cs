@@ -5,15 +5,16 @@ namespace Friendly10s
 
         public static int tally = 0;
         public static int count = 0;
-        //public static int errorcount = 0;
+
         List<Button> btd = new List<Button>();
-
-
+        
+        
 
 
         public Form1()
         {
             InitializeComponent();
+            label1.Text = "0"; 
             
         }
 
@@ -74,6 +75,7 @@ namespace Friendly10s
         }
        public void checker()
         {
+            
             if (count == 1)
             {
                 return;
@@ -94,7 +96,8 @@ namespace Friendly10s
 
                 }
             }
-            
+            string ec = Globals.errorcount.ToString();
+            label1.Text = ec;
 
 
         }
@@ -121,6 +124,9 @@ namespace Friendly10s
             }
 
             btd.Clear();
+            
+            
+
         }
         public void colourReset()
         {
@@ -220,12 +226,7 @@ namespace Friendly10s
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-           
+            
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -233,9 +234,17 @@ namespace Friendly10s
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //ignore
+            
+            
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            yform f2 = new yform();
+            f2.ShowDialog();
+           
         }
     }
    
