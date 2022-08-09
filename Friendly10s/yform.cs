@@ -47,7 +47,9 @@ namespace Friendly10s
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SoundPlayer mysound = new SoundPlayer(@"C:\Users\amudh\source\repos\Friendly10s1\Friendly10s\Resources\happy.wav");
+            
+            SoundPlayer mysound = new SoundPlayer(@"C:\Users\zhang\source\repos\Friendly10s\Friendly10s\Resources\happy.wav3");
+
             mysound.Play();
 
         }
