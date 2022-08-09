@@ -16,6 +16,7 @@ namespace Friendly10s
 
         public static int tally = 0;
         public static int count = 0;
+        public static int successCount = 0;
 
         List<Button> btd = new List<Button>();
         
@@ -25,7 +26,8 @@ namespace Friendly10s
         public Form1()
         {
             InitializeComponent();
-            label1.Text = "0"; 
+            label1.Text = "0";
+           
             
         }
 
@@ -109,6 +111,7 @@ namespace Friendly10s
             }
             string ec = Globals.errorcount.ToString();
             label1.Text = ec;
+            Progress();
 
 
         }
@@ -128,6 +131,7 @@ namespace Friendly10s
             timer2.Enabled = true;
             tally = 0;
             count = 0;
+            successCount = successCount + 2;
             SoundPlayer mysound = new SoundPlayer(@"C:\Users\amudh\source\repos\Friendly10s1\Friendly10s\Resources\happy.wav");
             mysound.Play();
             foreach (Button x in btd)
@@ -253,13 +257,59 @@ namespace Friendly10s
             
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        public void button11_Click(object sender, EventArgs e) // takes to next level
         {
             yform f2 = new yform();
             f2.ShowDialog();
-           
         }
 
+        public void Progress()
+        {
+            if (successCount >= 8)
+            {
+                button12.Visible = true;
+
+                if (Globals.errorcount <= 2)
+                {
+                    button11.Visible = true;
+                    
+                }
+                                
+            }
+            else
+            {
+                button11.Visible = false;
+                
+            }
+
+        }
+        public void Retry()
+        {
+            Globals.errorcount = 0;
+            successCount = 0;
+            tally = 0;
+            count = 0;
+
+            button1.Visible = true;
+            button2.Visible = true; 
+            button3.Visible = true;
+            button4.Visible = true;
+            button5.Visible = true;
+            button6.Visible = true;
+            button7.Visible = true;
+            button8.Visible = true;
+            button9.Visible = true;
+            button10.Visible = true;
+            button11.Visible = false;
+            button12.Visible = false;
+
+            colourReset();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Retry();
+        }
     }
    
 

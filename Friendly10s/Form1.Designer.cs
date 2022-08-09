@@ -48,6 +48,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -224,17 +225,30 @@
             // 
             this.button11.Location = new System.Drawing.Point(1507, 98);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(175, 214);
+            this.button11.Size = new System.Drawing.Size(175, 107);
             this.button11.TabIndex = 17;
-            this.button11.Text = "Account";
+            this.button11.Text = "Level 2";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Visible = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(1507, 232);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(175, 107);
+            this.button12.TabIndex = 18;
+            this.button12.Text = "Retry";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Visible = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1752, 936);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -282,5 +296,6 @@
         private TextBox textBox2;
         private Label label1;
         private Button button11;
+        private Button button12;
     }
 }
