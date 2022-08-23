@@ -9,7 +9,7 @@ namespace Friendly10s
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Friendly10sc.Form1());
         }
 
     }

@@ -13,7 +13,7 @@ using System.Media; /// allows us to use media files such as audio files///
 
 
 
-namespace Friendly10s
+namespace Friendly10sc
 {
     public partial class Form1 : Form
     {
@@ -265,7 +265,7 @@ namespace Friendly10s
 
         public void button11_Click(object sender, EventArgs e) // takes to next level///
         {
-            yform f2 = new yform();
+            Friendly10s.Form12 f2 = new Friendly10s.Form12();
             f2.ShowDialog();
         }
 
@@ -275,7 +275,7 @@ namespace Friendly10s
             {
                 button12.Visible = true;
 
-                if (Globals.errorcount <= 2)
+                if (errorcount <= 2)
                 {
                     button11.Visible = true;
 
@@ -291,7 +291,7 @@ namespace Friendly10s
         }
         public void Retry() ///the retry subroutine resets everything, allowing the uesr to retry the level//
         {
-            Globals.errorcount = 0; ///errorcount is reset back to 0///
+            errorcount = 0; ///errorcount is reset back to 0///
             successCount = 0; ///successcount is reset back to 0///
             tally = 0; ///tally and count is resent back to 0///
             count = 0;

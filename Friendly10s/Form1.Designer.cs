@@ -1,4 +1,4 @@
-﻿namespace Friendly10s
+﻿namespace Friendly10sc
 {
     partial class Form1
     {

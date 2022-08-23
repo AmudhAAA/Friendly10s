@@ -264,8 +264,8 @@ namespace Friendly10s
         }
         public void button11_Click(object sender, EventArgs e) // takes to next level
         {
-            yform f2 = new yform();
-            f2.ShowDialog();
+            Form3 f3 = new Form3();
+            f3.ShowDialog();
         }
 
         public void Progress()
