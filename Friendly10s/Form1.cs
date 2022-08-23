@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
+using System.Media; /// allows us to use media files such as audio files///
+/// 
 
 
 namespace Friendly10s
@@ -16,34 +17,34 @@ namespace Friendly10s
     public partial class Form1 : Form
     {
 
-        public static int tally = 0;
-        public static int count = 0;
-        public static int successCount = 0;
+        public static int tally = 0; /// the value of the button the user presses on is added to the variable: tally, ensuring they make a pair that adds up to ten///
+        public static int count = 0; /// this variable counts the number of times buttons are pressed, ensuring the user clicks on two buttons to add up to ten///
+        public static int successCount = 0; /// after every successful pair, two is added to this tally until it exceeds 8 ( meaning four pairs have succesfully matched) ///
+        public static int errorcount = 0;// counts the number of times the user's mistakes initiate the error() subroutine
+        List<Button> btd = new List<Button>(); /// makes sure the right button dissapears when clicked on///
 
-        List<Button> btd = new List<Button>();
-        
-        
+
 
 
         public Form1()
         {
             InitializeComponent();
             label1.Text = "0";
-           
-            
+
+
         }
 
 
         public void button1_Click(object sender, EventArgs e)
         {
 
-            tally = tally + 1;
-            count = count + 1;
-            btd.Add(button1);
-            checker();
-            button1.BackColor = Color.LightYellow;
+            tally = tally + 1; /// when this button is clicked, the value one is added to the tally///
+            count = count + 1; /// when this button is clicked, the  value one is added to the count///
+            btd.Add(button1); /// this adds the button to the list of buttons///
+            checker(); //this runs checker//
+            button1.BackColor = Color.LightYellow; //when clicked on, the button turns yellow to indicate the user has clicked on it///
 
-            
+
 
 
         }
@@ -59,13 +60,13 @@ namespace Friendly10s
             btd.Add(button2);
             button2.BackColor = Color.LightYellow;
             checker();
-            
-            
+
+
         }
 
         public void Form1_Load(object sender, EventArgs e)
         {
-
+            ///ignore///
         }
 
         public void button3_Click(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace Friendly10s
             button3.BackColor = Color.LightYellow;
             btd.Add(button3);
             checker();
-            
+
         }
 
         public void button4_Click(object sender, EventArgs e)
@@ -85,21 +86,21 @@ namespace Friendly10s
             button1.BackColor = Color.LightYellow;
             btd.Add(button4);
             checker();
-            
+
 
         }
-       public void checker()
+        public void checker() ///this subroutine checks if the uesr correctly matched a pair that adds up to ten///
         {
-            
-            if (count == 1)
+
+            if (count == 1) /// if the user has only clicked on one button, nothing should be done///
             {
                 return;
             }
 
-            
-            if (count == 2) 
+
+            if (count == 2)
             {
-                if (tally == 10)
+                if (tally == 10) /// if both requirements are fulfilled, it means the user has clicked on two buttons that add up to 10, succesfully matching that pair. Subroutine success then runs///
                 {
                     success();
 
@@ -107,47 +108,49 @@ namespace Friendly10s
                 }
                 else
                 {
-                    error();
+                    error(); /// if the user chooses two buttons but they don't add up to ten, the error subroutine runs///
 
                 }
             }
-            string ec = Globals.errorcount.ToString();
-            label1.Text = ec;
-            Progress();
+            string ec = errorcount.ToString(); /// converts the error count to a string so it can be displayed///
+            label1.Text = ec; ///label1 displays the error count///
+            Progress(); /// after each pair is matched, this subroutine runs in case the user is ready to progress to the next level///
 
 
         }
-        public void error()
+        public void error() /// As mentioned, if the user incorrectly matches a pair, this subroutine runs///
         {
-            pictureBox2.Visible = true;
+            pictureBox2.Visible = true; /// a previously hidden image appears, revealing a red "fail'///
             timer1.Enabled = true;
-            tally = 0;
+            tally = 0; ///tally and count are reset back to zero, ready for the next pair the user makes///
             count = 0;
-            Globals.errorcount = Globals.errorcount + 1;
-            colourReset();
-            btd.Clear();
+            errorcount = errorcount + 1; ///1 is added to the erorr count of the user which is used to see if they are allowed to progress to the next level///
+            colourReset(); /// subroutine that makes buttons return to their original colour///
+            btd.Clear(); ///all buttons are cleared from the list and do not become invisible as the user has failed///
         }
         public void success()
         {
-            pictureBox3.Visible = true;
+            pictureBox3.Visible = true; ///a previously hidden image appears, revealing a success image///
             timer2.Enabled = true;
             tally = 0;
             count = 0;
-            successCount = successCount + 2;
-            SoundPlayer mysound = new SoundPlayer(@"C:\Users\amudh\source\repos\Friendly10s1\Friendly10s\Resources\happy.wav");
-            mysound.Play();
-            foreach (Button x in btd)
+            successCount = successCount + 2; ///2 is added to the success count which determines when the option to progress to the next level appears///
+            properties.Resources.happyaudio;
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\mywavfile.wav");
+            player.Play();
+
+            foreach (Button x in btd) /// all the buttons added to the list which is all the buttons clicked on is made invisible///
             {
                 x.Visible = false;
-                
+
             }
 
-            btd.Clear();
-            
-            
+            btd.Clear(); ///the list of buttons are cleared, allowing for the next pair the user will match///
+
+
 
         }
-        public void colourReset()
+        public void colourReset() ///as mentioned, a subroutine that resets all buttons back to their original colour///
         {
             button1.BackColor = Color.White;
             button2.BackColor = Color.White;
@@ -181,12 +184,12 @@ namespace Friendly10s
 
         private void button5_Click(object sender, EventArgs e)
         {
-            tally = tally + 3;  
+            tally = tally + 3;
             count = count + 1;
             button5.BackColor = Color.LightYellow;
             btd.Add(button5);
             checker();
-            
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -196,7 +199,7 @@ namespace Friendly10s
             button6.BackColor = Color.LightYellow;
             btd.Add(button6);
             checker();
-            
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -206,7 +209,7 @@ namespace Friendly10s
             button7.BackColor = Color.LightYellow;
             btd.Add(button7);
             checker();
-            
+
 
         }
 
@@ -217,7 +220,7 @@ namespace Friendly10s
             button9.BackColor = Color.LightYellow;
             btd.Add(button9);
             checker();
-            
+
 
         }
 
@@ -228,7 +231,7 @@ namespace Friendly10s
             button10.BackColor = Color.LightYellow;
             btd.Add(button10);
             checker();
-            
+
 
 
         }
@@ -240,12 +243,12 @@ namespace Friendly10s
             button8.BackColor = Color.LightYellow;
             btd.Add(button8);
             checker();
-            
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -255,17 +258,17 @@ namespace Friendly10s
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
-        public void button11_Click(object sender, EventArgs e) // takes to next level
+        public void button11_Click(object sender, EventArgs e) // takes to next level///
         {
             yform f2 = new yform();
             f2.ShowDialog();
         }
 
-        public void Progress()
+        public void Progress() /// this subroutine checks if the user is ready to progress to the next level which is when the success count is over 8 ( meaning they have matched four pairs) and when they have made less than two errors. If they have successfully matched four pairs but made more than two errors, only the option to retry that level is provided///
         {
             if (successCount >= 8)
             {
@@ -274,26 +277,26 @@ namespace Friendly10s
                 if (Globals.errorcount <= 2)
                 {
                     button11.Visible = true;
-                    
+
                 }
-                                
+
             }
             else
             {
                 button11.Visible = false;
-                
+
             }
 
         }
-        public void Retry()
+        public void Retry() ///the retry subroutine resets everything, allowing the uesr to retry the level//
         {
-            Globals.errorcount = 0;
-            successCount = 0;
-            tally = 0;
+            Globals.errorcount = 0; ///errorcount is reset back to 0///
+            successCount = 0; ///successcount is reset back to 0///
+            tally = 0; ///tally and count is resent back to 0///
             count = 0;
 
             button1.Visible = true;
-            button2.Visible = true; 
+            button2.Visible = true;
             button3.Visible = true;
             button4.Visible = true;
             button5.Visible = true;
@@ -301,19 +304,19 @@ namespace Friendly10s
             button7.Visible = true;
             button8.Visible = true;
             button9.Visible = true;
-            button10.Visible = true;
+            button10.Visible = true;//all buttons are made visible///
             button11.Visible = false;
-            button12.Visible = false;
+            button12.Visible = false; ///retry and next level buttons are made invisible///
 
-            colourReset();
+            colourReset(); ///all buttons are reset to their original colour///
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e) ///this is the retry button which when clicked on, trigers the retry subroutine///
         {
             Retry();
         }
 
     }
-   
+
 
 }
