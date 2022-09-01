@@ -136,7 +136,7 @@ namespace Friendly10sc
             tally = 0;
             count = 0;
             successCount = successCount + 2; ///2 is added to the success count which determines when the option to progress to the next level appears///
-            properties.Resources.happyaudio;
+            
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\mywavfile.wav");
             player.Play();
 
